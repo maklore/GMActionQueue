@@ -22,7 +22,7 @@ GMActionQueue().action("await input", function() {
 	if mouse_check_button_pressed(mb_left) {
 		GMActionQueue().action("clicked", show_debug_message, "Clicked!");
 		GMActionQueue().action_call("clicked");
-    return true;
+    	return true;
 	}
 	return false; 
 });
