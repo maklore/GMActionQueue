@@ -16,7 +16,6 @@ GMActionQueue().action_listen();.
 GMActionQueue().action_await(async_load);
 ```
 - Add Actions to queue
-  Example: 
 ```gml
 GMActionQueue().action("await input", function() { 	
 	if mouse_check_button_pressed(mb_left) {
