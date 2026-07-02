@@ -9,7 +9,7 @@ GMActionQueue is a system for GMS2, where you add a function name (or an anonymo
 - Create an object
 - Add to Step event:
 ```gml
-GMActionQueue().action_listen();.
+GMActionQueue().action_listen();
 ```
 - Add to Async - Networking event
 ```gml
