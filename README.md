@@ -23,7 +23,7 @@ GMActionQueue().action("await input", function() {
 		GMActionQueue().action_call("clicked");
     	return true;
 	}
-	return false; 
+	return -1; 
 });
 ```
 - Call Action from queue
