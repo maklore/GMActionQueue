@@ -30,4 +30,5 @@ GMActionQueue().action("await input", function() {
 ```gml
 GMActionQueue().action_call("await input");
 ```
+> Actions will be removed from the queue when completed.
 - Enjoy!
