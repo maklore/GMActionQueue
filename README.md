@@ -4,7 +4,7 @@ GMActionQueue is a system for GMS2, where you add a function name (or an anonymo
 
 ### Basic setup
 - Create a script in GameMaker
-- Copy everything from GMActionQueue.gml
+- Copy everything from [GMActionQueue.gml](https://github.com/maklore/GMActionQueue/blob/main/GMActionQueue.gml)
 - Paste to script file
 - Create an object
 - Add to Step event:
