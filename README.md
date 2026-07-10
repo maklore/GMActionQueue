@@ -11,7 +11,7 @@ GMActionQueue is a system for GMS2, where you add a function name (or an anonymo
 ```gml
 GMActionQueue().action_listen();
 ```
-> GMActionQueue can be called as shown above, or accessed as a struct `GMActionQueue.action_*`.
+> GMActionQueue can be called as shown above, or accessed as a struct `GMActionQueue.action*`.
 - Add to Async - Networking event
 ```gml
 GMActionQueue().action_await();
