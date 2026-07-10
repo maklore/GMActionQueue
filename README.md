@@ -14,7 +14,7 @@ GMActionQueue().action_listen();
 > Can be called as shown above, or as a struct `GMActionQueue.action_listen();`.
 - Add to Async - Networking event
 ```gml
-GMActionQueue().action_await(async_load);
+GMActionQueue().action_await();
 ```
 - Add Actions to queue
 ```gml
