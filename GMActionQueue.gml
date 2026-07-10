@@ -59,6 +59,7 @@ function GMActionQueue() {
 	* Call Action from the queue using an ID.
 	* @param {string | real} _action_id Queue ID. (Non-strings will be converted to strings).
 	*/
+	
 	static action_call		= function(_action_id) {
 		
 		if !struct_exists(__action_list, _action_id) { exit; }
@@ -77,11 +78,13 @@ function GMActionQueue() {
 			show_debug_message("Action call denied. Data not sent.");
 		}
 	}
+	
 	/**
 	* Wait for Action to be sent to Async - Networking and processed.
 	* @param {id.dsmap} _load Async load.
 	*/
-	static action_await		= function(_load) {
+	static action_await		= function(_load = async_load) {
+		
 		if ds_map_find_value(_load, "type") == network_type_disconnect and ds_map_find_value(_load, "port") == __port {
 			action_reconnect();
 			exit;
@@ -95,11 +98,13 @@ function GMActionQueue() {
 			buffer_delete(_buffer);
 		}
 	}
+	
 	/**
 	* Listen for any Action to be executed. Removes Action from queue and returns it's ID after execution, else returns -1.
 	//* @returns {any}
 	*/
 	static action_listen	= function() {
+		
 		if __action_enable {
 			var _return_id = __action_id;
 			action_execute(__action_id);
@@ -107,11 +112,14 @@ function GMActionQueue() {
 		}
 		return -1;
 	}
+	
 	/// @ignore
 	static action_receive	= function(_action_id) {
+		
 		__action_enable = true;
 		__action_id = _action_id;
 	}
+	
 	/// @ignore
 	static action_execute	= function(_action_id) {
   
@@ -137,8 +145,10 @@ function GMActionQueue() {
 		__action_id  = "";
   
 	}
+	
 	/// @ignore
 	static action_reconnect = function() {
+		
 		__port = 6510;
 		while (__action_server < 0 && __port < 65535) {
 			__port++
