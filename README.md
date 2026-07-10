@@ -4,32 +4,32 @@ GMActionQueue is a system for GMS2, where you add a function name (or an anonymo
 
 ### Basic setup
 - Create a script in GameMaker
-- Copy everything from [GMActionQueue.gml](https://github.com/maklore/GMActionQueue/blob/main/GMActionQueue.gml)
-- Paste to script file
+	- Copy everything from [GMActionQueue.gml](https://github.com/maklore/GMActionQueue/blob/main/GMActionQueue.gml)
+	- Paste to script file
 - Create an object
-- Add to Step event:
-```gml
-GMActionQueue().action_listen();
-```
-> GMActionQueue can be called as shown above, or accessed as a struct `GMActionQueue.action*`.
-- Add to Async - Networking event
-```gml
-GMActionQueue().action_await();
-```
-- Add Actions to queue
-```gml
-GMActionQueue().action("await input", function() { 	
-	if mouse_check_button_pressed(mb_left) {
-		GMActionQueue().action("clicked", show_debug_message, "Clicked!");
-		GMActionQueue().action_call("clicked");
-    	return true;
-	}
-	return -1; 
-});
-```
-- Call Action from queue
-```gml
-GMActionQueue().action_call("await input");
-```
-> Actions will be removed from the queue when completed.
+	- Add to Step event:
+	```gml
+	GMActionQueue().action_listen();
+	```
+	> GMActionQueue can be called as shown above, or accessed as a struct `GMActionQueue.action*`.
+	- Add to Async - Networking event
+	```gml
+	GMActionQueue().action_await();
+	```
+	- Add Actions to queue
+	```gml
+	GMActionQueue().action("await input", function() { 	
+		if mouse_check_button_pressed(mb_left) {
+			GMActionQueue().action("clicked", show_debug_message, "Clicked!");
+			GMActionQueue().action_call("clicked");
+	    	return true;
+		}
+		return -1; 
+	});
+	```
+	- Call Action from queue
+	```gml
+	GMActionQueue().action_call("await input");
+	```
+	> Actions will be removed from the queue when completed.
 - Enjoy!
